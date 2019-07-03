@@ -18,7 +18,11 @@ class CreateQuestionsTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->string('decription');
-            $table->integer('user_id');
+            $table->bigInteger('user_id')->unsigned();
+        });
+
+        Schema::table('questions', function($table){
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
