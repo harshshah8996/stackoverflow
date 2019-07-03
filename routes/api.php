@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +11,23 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('jwt.auth')->get('users', function () {
+    return auth('api')->user();
 });
+
+// Authorization
+Route::post('/auth/sign-up','AuthController@signup');
+Route::post('/auth/login','AuthController@login');
+
+// User
+Route::get('/users','UserController@index');
+Route::get('/user','UserController@show');
+
+
+
+// Route::get('question','QuestionController@index');
+// Route::get('question/{id}','QuestionController@view');
+// Route::put('question/{id}','QuestionController@update');
+
+// Route::post('question','QuestionController@store');
+
