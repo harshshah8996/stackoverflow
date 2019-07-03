@@ -23,11 +23,11 @@ Route::post('/auth/login','AuthController@login');
 Route::get('/users','UserController@index');
 Route::get('/user','UserController@show');
 
-
-
-// Route::get('question','QuestionController@index');
-// Route::get('question/{id}','QuestionController@view');
-// Route::put('question/{id}','QuestionController@update');
-
-// Route::post('question','QuestionController@store');
+// Question
+Route::get('questions','QuestionController@index');
+Route::get('question','QuestionController@show');
+Route::get('question/{id}','QuestionController@view');
+Route::post('question','QuestionController@store');
+Route::put('question/{id}','QuestionController@update');
+Route::delete('question/{id}','QuestionController@delete');
 
