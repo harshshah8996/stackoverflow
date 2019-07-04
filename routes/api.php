@@ -31,3 +31,10 @@ Route::post('question','QuestionController@store');
 Route::put('question/{id}','QuestionController@update');
 Route::delete('question/{id}','QuestionController@delete');
 
+// Anwser
+Route::get('anwsers','AnswerController@index');
+Route::get('anwser','AnswerController@show');
+Route::get('anwser/{id}','AnswerController@view');
+Route::post('anwser','AnswerController@store');
+Route::put('anwser/{id}','AnswerController@update');
+Route::delete('anwser/{id}','AnswerController@delete');
